@@ -14,6 +14,12 @@ public class Cars implements Runnable {
             useCarWash(car, target.getLocker(), target);
         } else {
             System.out.println(car.getName() + " has started his car wash.");
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            target.finishWash(car);
         }
     }
     public void useCarWash(Car car, Car locker, Lockable target) {
