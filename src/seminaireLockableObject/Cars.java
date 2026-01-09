@@ -26,6 +26,7 @@ public class Cars implements Runnable {
         System.out.println(car.getName() + " is waiting for the car wash occupied by " + locker.getName());
         while (!car.wash(target)) {
             try {
+                System.out.println(car.getName() + " is still waiting for the car wash occupied by " + target.getLocker().getName());
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
