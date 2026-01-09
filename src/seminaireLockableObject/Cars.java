@@ -8,7 +8,6 @@ public class Cars implements Runnable {
         this.car = java.util.Objects.requireNonNull(car, "car");
         this.target = java.util.Objects.requireNonNull(target, "target");
     }
-
     @Override
     public void run() {
         if (!car.wash(target)) {
@@ -17,7 +16,6 @@ public class Cars implements Runnable {
             System.out.println(car.getName() + " has started his car wash.");
         }
     }
-
     public void useCarWash(Car car, Car locker, Lockable target) {
         System.out.println(car.getName() + " is waiting for the car wash occupied by " + locker.getName());
         while (!car.wash(target)) {

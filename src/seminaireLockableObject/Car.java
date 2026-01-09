@@ -3,7 +3,6 @@ package seminaireLockableObject;
 import java.util.List;
 
 public class Car {
-
     private final int id;
     private final String model;
 
@@ -14,12 +13,10 @@ public class Car {
         List<String> colors = List.of("Red", "Blue", "Green", "Black", "White");
         String color = colors.get((int) (Math.random() * colors.size()));
     }
-
     public Object getName() {
         return model + " #" + id;
     }
     public boolean wash(Lockable target) {
         return target.wash(this);
     }
-
 }
