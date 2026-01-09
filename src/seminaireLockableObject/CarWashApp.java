@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 public class CarWashApp implements Runnable {
     @Override
     public void run() {
-        var carWash = new CarWashApp();
+        var carWashApp = new CarWashApp();
         List<Car> cars = new ArrayList<>();
         Car car1 = new Car();
         Car car2 = new Car();
@@ -21,7 +21,9 @@ public class CarWashApp implements Runnable {
 
         ExecutorService service = Executors.newFixedThreadPool(cars.size());
         for (var i=0; i<cars.size(); i++) {
+            CarWash carWash = new CarWash();
             service.submit(new Cars(cars.get(i), carWash));
         }
     }
 }
+
