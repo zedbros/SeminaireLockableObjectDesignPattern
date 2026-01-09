@@ -14,12 +14,12 @@ public class Cars implements Runnable{
         if (car.wash(target)) {
             useCarWash(car, target.getLocker(), target);
         } else {
-            System.out.println(car.getName() + " has started his car wash." + target.getLocker().getName());
+            System.out.println(car.getName() + " has started his car wash.");
         }
     }
 
     public void useCarWash(Car car, Car locker, Lockable target) {
-        System.out.println(car.getName() + " is waiting for the car wash occupied by {}."+ car.getName() +locker.getName());
+        System.out.println(car.getName() + " is waiting for the car wash occupied by " + locker.getName());
         while (car.wash(target)) {
             try {
                 Thread.sleep(500);
@@ -27,6 +27,6 @@ public class Cars implements Runnable{
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("{} has started his car wash."+ car.getName());
+        System.out.println(car.getName() + " has started his car wash.");
     }
 }
