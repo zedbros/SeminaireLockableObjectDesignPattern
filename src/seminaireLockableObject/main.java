@@ -5,6 +5,5 @@ public class main {
     {
         CarWashApp carwashapp = new CarWashApp();
         carwashapp.run();
-
     }
 }
